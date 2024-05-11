@@ -1,6 +1,7 @@
 /**
  * reference引用； bind to a local variable
  *                 can not bind literal and const
+ * 引用就是java里的浅拷贝
  * 
 */
 #include <iostream>
