@@ -1,0 +1,1 @@
+//作为extern01a的头文件，提供其他cpp文件进行引用 #include "extern01a.h"
