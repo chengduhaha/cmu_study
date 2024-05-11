@@ -1,5 +1,5 @@
 #include <iostream>
-
+// 一个cpp中定义变量，在另一个cpp中使用
 int a = 100;
 
 
