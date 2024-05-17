@@ -73,7 +73,7 @@ int main(int argc, char** argv) {
      * const int * const ptop  从右往左读：这是一个常量的对象ptop，*指针 指向一个常量的int指针，int不能变
      * low 和 top 的区别是：
      * low的const修饰的基本类型，如int
-     * top的const修饰的是符合类型，比如对象
+     * top的const修饰的是复合类型，比如对象
     */
     const int top = 123;
     const int top2 = 456;
