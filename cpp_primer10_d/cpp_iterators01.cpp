@@ -26,6 +26,11 @@ using std::map;
 int main(int argc, char const *argv[])
 {
     // vector
+    vector<string> vector222(19, "sts"); //初始化vector 19个"strs""
+    for(auto it=vector222.begin(); it !=vector222.end(); ++it) {
+        cout << *it << endl;
+    }
+
     cout << "使用迭代器遍历vector" << endl;
     vector<string> vector1 = {"hello", "world"};
     for(auto it = vector1.begin(); it != vector1.end(); ++it) {
@@ -36,6 +41,16 @@ int main(int argc, char const *argv[])
         cout << (*it).size() << endl;
         cout << it->size() << endl;
     }
+    /**
+     * rbegin = 迭代器的末尾元素
+     * rend = 迭代器的开头元素 的前一个空位置
+    */
+    cout << "倒序使用迭代器遍历vector" << endl;
+    for(auto it = vector1.rbegin(); it != vector1.rend(); ++it) {
+        cout << *it << endl;
+    }
+
+
 
     //set 
     cout << "使用迭代器遍历set" << endl;
