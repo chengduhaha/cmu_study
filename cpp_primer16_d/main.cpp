@@ -5,6 +5,7 @@
 
 #include "hdfsioutil.cpp"
 #include "hdfsioutilv2.cpp"
+#include "hdfsioutilv3.cpp"
 
 using namespace std;
 using std::string;
@@ -34,6 +35,10 @@ int main(int argc, char const *argv[])
     */
     HdfsIoUtilV2 hdfsIoUtilV2; //无参构造类应该如此声明
     hdfsIoUtilV2.create_hdfsioutil();
+
+    HdfsIoUtilV3 hdfsIoUtilV3; //无参构造类应该如此声明
+    hdfsIoUtilV3.create_hdfsioutilv3();
+
 
     return 0;
 }
