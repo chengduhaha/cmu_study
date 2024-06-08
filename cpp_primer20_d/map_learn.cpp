@@ -62,8 +62,60 @@ void func() {
     // }
   
 }
+ 
+void func2() {
+    map<int, int> m1;
+    for (int i = 0; i < 10; i++)
+    {
+        if (m1.count(i) == 0)
+        {
+            cout << "hello" << endl;
+        }
+        
+    }
+    cout << m1.size() << endl;
+
+}
+
+/**
+ * lower bound(key) 返回不小于key的pair
+ * upper bound(key) 返回大于key的pair
+ */
+void func3() {
+    map<int, int> m1;
+    for (int i = 0; i < 10; i++)
+    {
+        m1.insert({i,i});
+    }
+     for(auto it=m1.begin(); it!=m1.end(); it++) {
+        cout << it->first << " : " << it->second << endl;
+
+    }
+
+
+    auto it1 = m1.lower_bound(5);
+    auto it2 = m1.upper_bound(5);
+    for(auto it=it1; ; it++) {
+         if (it == it2)
+        {
+            break;
+        }
+        cout << it->first << " : " << it->second << endl;
+        
+    }
+
+    for(auto it=it2; ; it++) {
+         if (it == it2)
+    
+        cout << it->first << " : " << it->second << endl;
+        
+    }
+
+}
 
 int main(int argc, char const *argv[])
 {
     func();
-}
+    func2();
+    func3();
+} 
