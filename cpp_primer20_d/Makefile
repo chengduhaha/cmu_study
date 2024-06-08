@@ -1,7 +1,7 @@
 CXX := g++ -std=c++11 #启动c++编译器
 CXXFLAGS := -g -Wall
 
-all: algorithm_comparator algorithm_lambda pair map_learn
+all: algorithm_comparator algorithm_lambda pair map_learn shared_unique_pointer
 
 algorithm_comparator:
 	$(CXX) $(CXXFLAGS) -o algorithm_comparator algorithm_comparator.cpp
@@ -15,5 +15,8 @@ pair:
 map_learn:
 	$(CXX) $(CXXFLAGS) -o map_learn map_learn.cpp
 
+shared_unique_pointer:
+	$(CXX) $(CXXFLAGS) -o shared_unique_pointer shared_unique_pointer.cpp
+
 clean:
-	rm -rf algorithm_comparator algorithm_lambda pair map_learn
+	rm -rf algorithm_comparator algorithm_lambda pair map_learn shared_unique_pointer
