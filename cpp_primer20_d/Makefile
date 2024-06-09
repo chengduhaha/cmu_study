@@ -1,7 +1,7 @@
 CXX := g++ -std=c++11 #启动c++编译器
 CXXFLAGS := -g -Wall
 
-all: algorithm_comparator algorithm_lambda pair map_learn shared_unique_pointer shallow_deep_copy dangling_pointer
+all: algorithm_comparator algorithm_lambda pair map_learn shared_unique_pointer shallow_deep_copy dangling_pointer smart_pointer
 
 algorithm_comparator:
 	$(CXX) $(CXXFLAGS) -o algorithm_comparator algorithm_comparator.cpp
@@ -23,6 +23,7 @@ shallow_deep_copy:
 
 dangling_pointer:
 	$(CXX) $(CXXFLAGS) -o dangling_pointer dangling_pointer.cpp
-
+smart_pointer:
+	$(CXX) $(CXXFLAGS) -o smart_pointer smart_pointer.cpp
 clean:
-	rm -rf algorithm_comparator algorithm_lambda pair map_learn shared_unique_pointer shallow_deep_copy dangling_pointer
+	rm -rf algorithm_comparator algorithm_lambda pair map_learn shared_unique_pointer shallow_deep_copy dangling_pointer smart_pointer
