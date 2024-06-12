@@ -1,7 +1,7 @@
 CXX := g++ -std=c++14 #启动c++编译器 14版本有make_unique方法
 CXXFLAGS := -g -Wall
 
-all: unique_pointer weak_pointer dynamic_array copy_constructor deconstrucotor swap
+all: unique_pointer weak_pointer dynamic_array copy_constructor deconstrucotor swap move_object
 
 unique_pointer:
 	$(CXX) $(CXXFLAGS) -o unique_pointer unique_pointer.cpp
@@ -21,5 +21,8 @@ deconstrucotor:
 swap:
 	$(CXX) $(CXXFLAGS) -o swap swap.cpp
 
+move_object:
+	$(CXX) $(CXXFLAGS) -o move_object move_object.cpp
+
 clean:
-	rm -rf unique_pointer weak_pointer dynamic_array copy_constructor deconstrucotor swap
+	rm -rf unique_pointer weak_pointer dynamic_array copy_constructor deconstrucotor swap move_object
