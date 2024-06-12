@@ -70,6 +70,13 @@ class Son : public Father {
     }
 };
 
+class Daughter : public Father {
+ public:
+    void show() {
+        cout << "Daughter:show" << endl;
+    }
+};
+
 void doShow(Father* father) {
     father->show(); // 这里调用的是虚函数，实际执行哪个函数取决于fatherPtr实际指向的对象类型
 }
@@ -82,5 +89,16 @@ int main(int argc, char const *argv[])
 
     Father* vptr2 = new Son();
     doShow(vptr2);
+
+    Daughter a;
+    a.show();
+
+    Father* f1 = (Father*) &a;
+    f1->show();
+
+    Son s;
+    Father& f2 = s;
+    f2.show();
+
     return 0;
 } 
