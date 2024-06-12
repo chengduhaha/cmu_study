@@ -45,6 +45,14 @@ class A {
     }
 };
 
+bool operator==(const A& lhs, const A& rhs) {
+    return lhs.a_ == rhs.a_;
+}
+
+bool operator!=(const A& lhs, const A& rhs) {
+    return !(lhs == rhs);
+}
+
 A operator*(const A& lhs, const A& rhs) {
     A a0(0);
     a0.a_ = + lhs.a_ * rhs.a_;
@@ -61,6 +69,9 @@ int main(int argc, char const *argv[])
     
     A a3 = a1 * a2;
     cout << a3.a_ << endl;
+
+    cout << (a1 == a2) << endl;
+    cout << (a1 != a2) << endl;
     return 0;
    
 } 
