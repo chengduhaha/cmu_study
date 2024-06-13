@@ -57,9 +57,12 @@ using std::unordered_map;
     */
 class Father {
  public:
+    static int num;
     virtual void show() {
         cout << "Father:show" << endl;
     }
+    // = 0;代码pure virtual 纯虚函数 代码father是一个抽象类，Father无法进行实例化
+    // virtual void eat() = 0;
     virtual ~Father() {} //析构函数也应该声明为虚函数
 };
 
@@ -70,9 +73,11 @@ class Son : public Father {
     }
 };
 
+int Father::num = 0;
+
 class Daughter : public Father {
  public:
-    void show() {
+    void show() override {
         cout << "Daughter:show" << endl;
     }
 };
@@ -84,6 +89,8 @@ void doShow(Father* father) {
 
 int main(int argc, char const *argv[])
 {   
+    Father* f = new Son();
+
     Father* vptr1 = new Father();
     doShow(vptr1);
 
@@ -95,10 +102,16 @@ int main(int argc, char const *argv[])
 
     Father* f1 = (Father*) &a;
     f1->show();
+    doShow(f1);
+    cout << f1->num << endl;
 
     Son s;
+    s.num += 1;
     Father& f2 = s;
     f2.show();
+    cout << f2.num << endl;
+    cout << Father::num << endl;
+    cout << Son::num << endl;
 
     return 0;
 } 
