@@ -29,6 +29,10 @@ using std::unordered_map;
 
 /**
  * protected 只能在子类的类内访问，或friend的body中访问
+ * 
+ * struct 和 class的区别是
+ *  struct默认属性都是public，且继承public父类
+ *  class默认属性都是private，且继承private父类
 */
 class Base {
     friend void bb(Base& base);
