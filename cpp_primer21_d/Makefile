@@ -1,7 +1,7 @@
 CXX := g++ -std=c++14 #启动c++编译器 14版本有make_unique方法
 CXXFLAGS := -g -Wall
 
-all: unique_pointer weak_pointer dynamic_array copy_constructor deconstrucotor swap move_object operator_overload input_output_overload protected_class
+all: unique_pointer weak_pointer dynamic_array copy_constructor deconstrucotor swap move_object operator_overload input_output_overload protected_class container_inherit
 
 unique_pointer:
 	$(CXX) $(CXXFLAGS) -o unique_pointer unique_pointer.cpp
@@ -33,5 +33,8 @@ input_output_overload:
 protected_class:
 	$(CXX) $(CXXFLAGS) -o protected_class protected_class.cpp
 
+container_inherit:
+	$(CXX) $(CXXFLAGS) -o container_inherit container_inherit.cpp
+
 clean:
-	rm -rf unique_pointer weak_pointer dynamic_array copy_constructor deconstrucotor swap move_object operator_overload input_output_overload protected_class
+	rm -rf unique_pointer weak_pointer dynamic_array copy_constructor deconstrucotor swap move_object operator_overload input_output_overload protected_class container_inherit
