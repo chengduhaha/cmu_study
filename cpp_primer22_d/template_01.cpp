@@ -41,6 +41,7 @@ class A {
  public:
     int a_;
     A(int a) : a_(a) {};
+    //必须要重载+操作符，因为在add()会用到+操作符
     A& operator+(const A& a) {
         this->a_ += a.a_;
         return *this;
