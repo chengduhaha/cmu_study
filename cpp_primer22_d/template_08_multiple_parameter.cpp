@@ -28,34 +28,31 @@ using std::map;
 using std::unordered_map;
 
 /**
- * 重载模板
+ * 可变长参数模板
  * 
- * 编译器执行同名方法的优先级：非模板方法 > 最符合(specialized)的模板方法 > 一般符合的模板方法
+ * 
 */
-template <typename T1>
-void f(T1& t1) {
-    cout << "T1&" << endl;
+template <typename T>
+ostream& print1(ostream& os, const T& t) {
+    os << t << endl;
+    return os;
 }
 
-template <typename T1>
-void f(T1* t1) {
-    cout << "T1*" << endl;
-}
-
-void f(string* t1) {
-    cout << "string*" << endl;
+//chain 
+/**
+ * 直接使用标准的C++ for循环来遍历变长模板参数包（如Args... args）是不可能的，
+ * 因为编译时期参数包的具体内容是未知的，无法直接迭代
+*/
+template <typename T, typename... Args>
+ostream& print1(ostream& os, const T& t, Args... args) {
+    os << t << " ";
+    print1(os, args...);
+    return os;
 }
 
 int main(int argc, char const *argv[])
 {   
-    string s = "hello";
-    f(s);
-    f(&s);
-
-    cout << "~~~~~~~~~~" << endl;
-    int s2 = 102;
-    f(s2);
-    f(&s2);
+    print1(cout, 1,2,"ss");
 
 
     return 0;
