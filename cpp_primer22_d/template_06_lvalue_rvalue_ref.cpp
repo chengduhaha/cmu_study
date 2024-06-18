@@ -83,6 +83,15 @@ void test4(int v1, int& v2) {
 }
 
 
+template <typename FUNC, typename T1, typename T2>
+void flip5(FUNC f, T1&& t1, T2&& t2) {
+    f(std::forward<T1>(t1) , std::forward<T2>(t2));
+}
+void test5(int v1, int& v2) {
+    cout << "v1 = " << v1 << " ++v2 = " <<  ++v2 << endl;
+}
+
+
 int main(int argc, char const *argv[])
 {   
     f1();
@@ -114,6 +123,13 @@ int main(int argc, char const *argv[])
     int v8 = 100;
     flip4(test4, v7, v8);
     cout << " v2 = " << v8 << endl;
+    cout << "~~~~~~~~~" << endl;
+
+
+    int v9 = 10;
+    int v10 = 100;
+    flip5(test5, v9, v10);
+    cout << " v2 = " << v10 << endl;
     cout << "~~~~~~~~~" << endl;
 
 
